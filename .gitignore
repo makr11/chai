@@ -1,0 +1,10 @@
+models
+spacy_hr
+events.db
+events.db-shm
+events.db-wal
+rasa.db
+rasa.db-shm
+rasa.db-wal
+__pycache__
+.idea/vcs.xml

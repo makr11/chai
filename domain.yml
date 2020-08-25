@@ -1,0 +1,53 @@
+session_config:
+  session_expiration_time: 60.0
+  carry_over_slots_to_new_session: true
+intents:
+- greet
+- goodbye
+- affirm
+- deny
+- mood_great
+- mood_unhappy
+- bot_challenge
+- find_famous_people_drenova
+- famous_people_drenova:
+    use_entities:
+      - famous_person
+responses:
+  utter_greet:
+  - text: Hej! Kako si?
+  utter_cheer_up:
+  - text: 'Evo ti nešto da se razveseliš:'
+    image: https://i.imgur.com/nGF1K8f.jpg
+  utter_did_that_help:
+  - text: Jeli to pomoglo?
+  utter_happy:
+  - text: Odlično, nastavi!
+  utter_goodbye:
+  - text: Pozdrav!
+  utter_iamabot:
+  - text: Ja sam bot.
+  utter_find_famous_people_drenova:
+  - text: Poznati ljudi na Drenovi su Fran Franković, Marko Marić. Želite li saznati nešto više o njima?
+  utter_famous_people_drenova:
+  - text: Fran Franković je legenda
+
+forms:
+  - form_famous_people_drenova
+
+actions:
+- utter_greet
+- utter_cheer_up
+- utter_did_that_help
+- utter_happy
+- utter_goodbye
+- utter_iamabot
+- utter_find_famous_people_drenova
+- utter_famous_people_drenova
+
+slots:
+  famous_person:
+      type: unfeaturized
+
+entities:
+   - famous_person
