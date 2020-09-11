@@ -49,3 +49,15 @@
 - htio bi čuti nešto o [Fran Franković](famous_person)
 - šta znate o [Fran Franković](famous_person)
 - [Fran Franković](famous_person)
+
+## intent:start_slideshow
+- pokreni slideshow
+- slideshow
+
+## intent:next
+- dalje
+- može sljedeći
+
+## intent:past
+- prošli
+- prethodni slajd

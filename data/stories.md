@@ -37,3 +37,11 @@
   - form_famous_people_drenova
   - form{"name": "form_famous_people_drenova"}
   - form{"name": null}
+  
+## slideshow
+* start_slideshow
+  - utter_slideshow
+* next
+  - utter_next
+* past
+  - utter_past

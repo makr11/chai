@@ -10,6 +10,9 @@ intents:
 - mood_unhappy
 - bot_challenge
 - find_famous_people_drenova
+- start_slideshow
+- past
+- next
 - famous_people_drenova:
     use_entities:
       - famous_person
@@ -19,6 +22,7 @@ responses:
   utter_cheer_up:
   - text: 'Evo ti nešto da se razveseliš:'
     image: https://i.imgur.com/nGF1K8f.jpg
+    slideshow: "a"
   utter_did_that_help:
   - text: Jeli to pomoglo?
   utter_happy:
@@ -31,6 +35,21 @@ responses:
   - text: Poznati ljudi na Drenovi su Fran Franković, Marko Marić. Želite li saznati nešto više o njima?
   utter_famous_people_drenova:
   - text: Fran Franković je legenda
+  utter_slideshow:
+    - custom:
+      - text: "Dalje za idući slajd, natrag za prethodni slajd"
+        path: "/slideshow/brisanje_juge"
+        last: "10"
+        type: "slideshow"
+  utter_next:
+    - custom:
+      - text: "Sljedeći slajd"
+        action: "next"
+  utter_past:
+    - custom:
+      - text: "Prethodni slajd"
+        action: "past"
+
 
 forms:
   - form_famous_people_drenova
@@ -44,6 +63,7 @@ actions:
 - utter_iamabot
 - utter_find_famous_people_drenova
 - utter_famous_people_drenova
+- utter_slideshow
 
 slots:
   famous_person:
