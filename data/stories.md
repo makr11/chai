@@ -1,6 +1,7 @@
-## happy path
+## entry path
 * greet
   - utter_greet
+  - action_show_content
 * mood_great
   - utter_happy
 
@@ -38,10 +39,28 @@
   - form{"name": "form_famous_people_drenova"}
   - form{"name": null}
   
+## show content
+* show_content
+  - action_show_content
+  
 ## slideshow
 * start_slideshow
-  - utter_slideshow
+  - action_start_slideshow
 * next
   - utter_next
 * past
   - utter_past
+  
+## video
+* start_video
+  - action_start_video
+* play
+  - utter_play
+* stop
+  - utter_stop
+* pause
+  - utter_pause
+  
+## simple term information
+* term_information
+  - action_term_information

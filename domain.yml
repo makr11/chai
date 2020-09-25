@@ -8,48 +8,57 @@ intents:
 - deny
 - mood_great
 - mood_unhappy
-- bot_challenge
 - find_famous_people_drenova
+- bot_challenge
+- show_content
 - start_slideshow
+- start_video
+- term_information
 - past
 - next
+- play
+- stop
+- pause
 - famous_people_drenova:
     use_entities:
       - famous_person
+
 responses:
   utter_greet:
-  - text: Hej! Kako si?
+  - text: Pozdrav! Dobrodošli u zavičajni muzej Drenove.
   utter_cheer_up:
   - text: 'Evo ti nešto da se razveseliš:'
     image: https://i.imgur.com/nGF1K8f.jpg
-    slideshow: "a"
   utter_did_that_help:
   - text: Jeli to pomoglo?
   utter_happy:
   - text: Odlično, nastavi!
+  utter_find_famous_people_drenova:
+  - text: Poznati ljudi na Drenovi.
   utter_goodbye:
   - text: Pozdrav!
   utter_iamabot:
   - text: Ja sam bot.
-  utter_find_famous_people_drenova:
-  - text: Poznati ljudi na Drenovi su Fran Franković, Marko Marić. Želite li saznati nešto više o njima?
-  utter_famous_people_drenova:
-  - text: Fran Franković je legenda
-  utter_slideshow:
-    - custom:
-      - text: "Dalje za idući slajd, natrag za prethodni slajd"
-        path: "/slideshow/brisanje_juge"
-        last: "10"
-        type: "slideshow"
   utter_next:
     - custom:
-      - text: "Sljedeći slajd"
+      - text: "Na zapovijed"
         action: "next"
   utter_past:
     - custom:
-      - text: "Prethodni slajd"
+      - text: "Na zapovijed"
         action: "past"
-
+  utter_play:
+    - custom:
+      - text: "Na zapovijed"
+        action: "play"
+  utter_stop:
+    - custom:
+      - text: "Na zapovijed"
+        action: "stop"
+  utter_pause:
+    - custom:
+      - text: "Na zapovijed"
+        action: "pause"
 
 forms:
   - form_famous_people_drenova
@@ -61,13 +70,22 @@ actions:
 - utter_happy
 - utter_goodbye
 - utter_iamabot
-- utter_find_famous_people_drenova
-- utter_famous_people_drenova
-- utter_slideshow
+- utter_next
+- utter_past
+- utter_play
+- utter_stop
+- utter_pause
+- action_show_content
+- action_start_slideshow
+- action_start_video
+- action_term_information
 
 slots:
   famous_person:
-      type: unfeaturized
+    type: unfeaturized
+  search_terms:
+    type: unfeaturized
 
 entities:
    - famous_person
+   - search_terms
