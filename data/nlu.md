@@ -42,6 +42,7 @@
 - razgovaram li sa čovjekom?
 
 ## intent:show_content
+- Content
 - šta bi mogao vidjeti
 - šta mogu saznati o Drenovi
 - kakav sve sadržaj imate
@@ -84,7 +85,11 @@
 - makni video
 - stop
 
-## intent: pause
+## intent:pause
 - pauziraj
 - pauza
 - pauziraj video
+
+## intent:out_of_scope
+- dasdf freg
+- šta ima za jesti bla bla

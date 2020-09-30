@@ -11,6 +11,7 @@ intents:
 - find_famous_people_drenova
 - bot_challenge
 - show_content
+- out_of_scope
 - start_slideshow
 - start_video
 - term_information
@@ -59,6 +60,8 @@ responses:
     - custom:
       - text: "Na zapovijed"
         action: "pause"
+  utter_please_rephrase:
+    - text: Oprosti, nisam te razumio najbolje, možeš li molim te ponoviti.
 
 forms:
   - form_famous_people_drenova
@@ -70,6 +73,7 @@ actions:
 - utter_happy
 - utter_goodbye
 - utter_iamabot
+- utter_please_rephrase
 - utter_next
 - utter_past
 - utter_play
@@ -79,6 +83,7 @@ actions:
 - action_start_slideshow
 - action_start_video
 - action_term_information
+- action_default_fallback
 
 slots:
   famous_person:

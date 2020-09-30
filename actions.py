@@ -51,14 +51,43 @@ class ActionShowContent(Action):
         c = conn.cursor()
         c.execute('SELECT * FROM terms')
         terms = c.fetchall()
+        unpacked_terms = unpack_rows(c.description, terms)
         c.execute('SELECT * FROM content')
         content = c.fetchall()
+        unpacked_content = unpack_rows(c.description, content)
         if len(terms) and len(content):
             dispatcher.utter_message(attachment={
-                "terms": terms,
-                "content": content,
+                "terms": unpacked_terms,
+                "content": unpacked_content,
                 "type": "content",
                 "text": "Sadržaj prikazan sa lijeve strane."})
+        conn.close()
+        return []
+
+
+class ActionDefaultFallback(Action):
+    def name(self) -> Text:
+        return "action_default_fallback"
+
+    def run(self, dispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+        conn = sqlite3.connect('./chai.db')
+        c = conn.cursor()
+        c.execute('SELECT * FROM terms')
+        terms = c.fetchall()
+        unpacked_terms = unpack_rows(c.description, terms)
+        c.execute('SELECT * FROM content')
+        content = c.fetchall()
+        unpacked_content = unpack_rows(c.description, content)
+        if len(terms) and len(content):
+            dispatcher.utter_message(attachment={
+                "terms": unpacked_terms,
+                "content": unpacked_content,
+                "type": "content",
+                "text": (
+                    "Oprosti, nisam te razumio najbolje, "
+                    "možeš li molim te ponoviti, ili pogledati "
+                    "sadržaj prikazan sa lijeve strane koji mogu prikazati."
+                )})
         conn.close()
         return []
 
