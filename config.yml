@@ -3,7 +3,6 @@
 language: hr
 pipeline:
   - name: SpacyNLP
-    model: './models/spacy_hr'
   - name: SpacyTokenizer
   - name: SpacyFeaturizer
     ner_feature_vectors: true
