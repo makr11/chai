@@ -1,0 +1,2 @@
+fuzzywuzzy
+mysql-connector-python

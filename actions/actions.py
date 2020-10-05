@@ -9,7 +9,7 @@
 import enum
 import requests
 import json
-import sqlite3
+import mysql.connector
 from fuzzywuzzy import process
 from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
@@ -47,7 +47,9 @@ class ActionShowContent(Action):
         return "action_show_content"
 
     def run(self, dispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        conn = sqlite3.connect('./chai.db')
+        conn = mysql.connector.connect(user="wwwbezgr_admin", password='RY-hm.+RhftX',
+                                       host='178.218.165.57',
+                                       database='wwwbezgr_chai')
         c = conn.cursor()
         c.execute('SELECT * FROM terms')
         terms = c.fetchall()
@@ -70,7 +72,9 @@ class ActionDefaultFallback(Action):
         return "action_default_fallback"
 
     def run(self, dispatcher, tracker: Tracker, domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
-        conn = sqlite3.connect('./chai.db')
+        conn = mysql.connector.connect(user="wwwbezgr_admin", password='RY-hm.+RhftX',
+                                       host='178.218.165.57',
+                                       database='wwwbezgr_chai')
         c = conn.cursor()
         c.execute('SELECT * FROM terms')
         terms = c.fetchall()
@@ -175,7 +179,9 @@ class ActionStartVideo(Action):
 
 def extract_content_by_search_term(query, search_term, arguments=()):
     data = []
-    conn = sqlite3.connect('./chai.db')
+    conn = mysql.connector.connect(user="wwwbezgr_admin", password='RY-hm.+RhftX',
+                                   host='178.218.165.57',
+                                   database='wwwbezgr_chai')
     c = conn.cursor()
     c.execute('SELECT * FROM terms')
     terms = c.fetchall()
@@ -210,11 +216,11 @@ def fuzzy_match_terms(slot_value, terms):
 class QueryDefinitions(enum.Enum):
     SEARCH_TERM_AND_TYPE = ('SELECT c.* FROM term_content tc '
                             'INNER JOIN content c ON c.id = tc.content_id '
-                            'WHERE tc.term_id = ? AND c.type = ?')
+                            'WHERE tc.term_id = %s AND c.type = %s')
 
     SEARCH_TERM = ('SELECT c.* FROM term_content tc '
                    'INNER JOIN content c ON c.id = tc.content_id '
-                   'WHERE tc.term_id = ?')
+                   'WHERE tc.term_id = %s')
 
     GET_ALL_TERMS = 'SELECT * FROM terms'
 
