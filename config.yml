@@ -2,10 +2,7 @@
 # https://rasa.com/docs/rasa/nlu/components/
 language: hr
 pipeline:
-  - name: SpacyNLP
-  - name: SpacyTokenizer
-  - name: SpacyFeaturizer
-    ner_feature_vectors: true
+  - name: WhitespaceTokenizer
   - name: RegexFeaturizer
   - name: LexicalSyntacticFeaturizer
   - name: CountVectorsFeaturizer
@@ -18,7 +15,6 @@ pipeline:
   - name: EntitySynonymMapper
   - name: ResponseSelector
     epochs: 100
-
 # Configuration for Rasa Core.
 # https://rasa.com/docs/rasa/core/policies/
 policies:
