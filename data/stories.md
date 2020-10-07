@@ -30,7 +30,7 @@
 ## bot challenge
 * bot_challenge
   - utter_iamabot
-  
+
 ## famous people drenova
 * find_famous_people_drenova
   - utter_find_famous_people_drenova
@@ -38,11 +38,11 @@
   - form_famous_people_drenova
   - form{"name": "form_famous_people_drenova"}
   - form{"name": null}
-  
+
 ## show content
 * show_content
   - action_show_content
-  
+
 ## slideshow
 * start_slideshow
   - action_start_slideshow
@@ -50,7 +50,7 @@
   - utter_next
 * past
   - utter_past
-  
+
 ## video
 * start_video
   - action_start_video
@@ -60,7 +60,21 @@
   - utter_stop
 * pause
   - utter_pause
-  
+
 ## simple term information
 * term_information
   - action_term_information
+
+## New Story
+
+* out_of_scope
+    - utter_greet
+* show_content
+    - action_show_content
+* show_content
+    - action_show_content
+* start_slideshow{"search_terms":"pacifizmu"}
+    - slot{"search_terms":"pacifizmu"}
+    - action_start_slideshow
+* start_slideshow
+    - action_start_slideshow
