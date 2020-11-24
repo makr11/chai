@@ -20,18 +20,20 @@ CREATE TABLE IF NOT EXISTS term_content (
 	FOREIGN KEY(content_id) REFERENCES content(id),
 	FOREIGN KEY(term_id) REFERENCES terms(id)
 );
-INSERT INTO terms (id,term) VALUES (1,'Henry la Fontaine'),
- (2,'Pacifizam'),
- (3,'Brisanje Juge'),
- (4,'Astrid Kuljanić'),
- (5,'Stipe Bilić'),
- (6,'Esperanto');
-INSERT INTO content (id,title,path,info,text,type,quantity) VALUES (1,'Brisanje Juge','/slideshow/brisanje_juge','Prikazujemo prezentaciju o brisanju Juge','Prikazujemo prezentaciju o brisanju Juge.','presentation',10),
- (2,'Henry la Fontaine','/slideshow/henry_la_fontaine','Prikazujemo prezentaciju o Henry la Fontaine-u','Prikazujemo prezentaciju o Henry la Fontaine-u.','presentation',NULL),
- (3,'Pacifizam','/slideshow/pacifizam','Prikazujemo prezentaciju o pacifizmu.','Prikazujemo prezentaciju o pacifizmu.','presentation',12),
- (4,'Astrid Kunjarić & Spartaco Črnjarić','https://youtu.be/WLSXCfjjZps','Drenovska muzika','Slušate muziku od Astrid Kuljanić i Spartaco Črnjarića.','video',NULL),
- (5,'Stipe Bilić, Joseph Haydn: Keyboard Sonata No. 49 in E flat','https://youtu.be/0E1nvbEEoAo','Stipe Bilić svira Josepha Haydn-a','Stipe Bilić svira djelo koje je skladao Joseph Haydn','video',NULL),
- (6,'Esperanto','/slideshow/pacifizam/9.JPG','Esperanto','Međunarodni jezik koji omogućava bolje razumijevanje među narodima','image',NULL);
+INSERT INTO terms (term) VALUES
+ ('Henry la Fontaine'),
+ ('Pacifizam'),
+ ('Brisanje Juge'),
+ ('Astrid Kuljanić'),
+ ('Stipe Bilić'),
+ ('Esperanto');
+INSERT INTO content (id,title,path,info,text,type,quantity) VALUES
+ ('Brisanje Juge','/slideshow/brisanje_juge','Prikazujemo prezentaciju o brisanju Juge','Prikazujemo prezentaciju o brisanju Juge.','presentation',10),
+ ('Henry la Fontaine','/slideshow/henry_la_fontaine','Prikazujemo prezentaciju o Henry la Fontaine-u','Prikazujemo prezentaciju o Henry la Fontaine-u.','presentation',NULL),
+ ('Pacifizam','/slideshow/pacifizam','Prikazujemo prezentaciju o pacifizmu.','Prikazujemo prezentaciju o pacifizmu.','presentation',12),
+ ('Astrid Kunjarić & Spartaco Črnjarić','https://youtu.be/WLSXCfjjZps','Drenovska muzika','Slušate muziku od Astrid Kuljanić i Spartaco Črnjarića.','video',NULL),
+ ('Stipe Bilić, Joseph Haydn: Keyboard Sonata No. 49 in E flat','https://youtu.be/0E1nvbEEoAo','Stipe Bilić svira Josepha Haydn-a','Stipe Bilić svira djelo koje je skladao Joseph Haydn','video',NULL),
+ ('Esperanto','/slideshow/pacifizam/9.JPG','Esperanto','Međunarodni jezik koji omogućava bolje razumijevanje među narodima','image',NULL);
 INSERT INTO term_content (term_id,content_id) VALUES (3,1),
  (1,2),
  (2,3),

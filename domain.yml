@@ -41,25 +41,15 @@ responses:
   utter_iamabot:
   - text: Ja sam bot.
   utter_next:
-    - custom:
-      - text: "Na zapovijed"
-        action: "next"
+    - text: "Na zapovijed"
   utter_past:
-    - custom:
-      - text: "Na zapovijed"
-        action: "past"
+    - text: "Na zapovijed"
   utter_play:
-    - custom:
-      - text: "Na zapovijed"
-        action: "play"
+    - text: "Na zapovijed"
   utter_stop:
-    - custom:
-      - text: "Na zapovijed"
-        action: "stop"
+    - text: "Na zapovijed"
   utter_pause:
-    - custom:
-      - text: "Na zapovijed"
-        action: "pause"
+    - text: "Na zapovijed"
   utter_please_rephrase:
     - text: Oprosti, nisam te razumio najbolje, možeš li molim te ponoviti.
 
